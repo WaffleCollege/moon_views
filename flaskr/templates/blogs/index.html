@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
 <head>
-<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
 </head>
 <body>
     <header>
       <h1>ミニブログを作ってみよう</h1>
     </header>
+    <p><a href="{{ url_for('blogs.create') }}">新規投稿</a></p>
   <div>
     <ul>
       {% for blog in blogs %} <!-- ループさせてそれぞれ要素を取り出す -->
