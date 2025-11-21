@@ -1,0 +1,238 @@
+body {
+    background-color: #FAFAFA;
+    color: #333333;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    /* Darker gradient for better contrast with white text */
+    background: linear-gradient(135deg, #EF6C00, #E65100);
+    color: #3E2723;
+    /* Dark Brown for high contrast */
+    padding: 40px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle pattern overlay for header beauty */
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 20%);
+    pointer-events: none;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: inherit;
+    /* Inherit dark brown from header */
+}
+
+a {
+    color: #E65100;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #FF9800;
+    text-decoration: underline;
+}
+
+/* Main container for centering content */
+div.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+body>div:not(.container) {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Specific styling for the New Post link to make it a CTA button with shiny effect */
+.btn-new-post {
+    display: grid;
+    /* User requested grid */
+    place-items: center;
+    width: fit-content;
+    margin: 0 auto 40px auto;
+    /* Center horizontally with more space */
+    background: linear-gradient(to right, #FF9800, #FF5722);
+    /* More vibrant gradient */
+    color: white;
+    padding: 18px 60px;
+    /* Larger button */
+    border-radius: 50px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(230, 81, 0, 0.3);
+    /* Softer, larger shadow */
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 2px;
+    /* More well styled */
+    text-transform: uppercase;
+    /* More well styled */
+    border: 2px solid transparent;
+    /* Prepare for hover border */
+}
+
+/* Shiny animation effect */
+.btn-new-post::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+    transition: none;
+}
+
+.btn-new-post:hover::after {
+    animation: shine 1.5s infinite;
+}
+
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+
+    50% {
+        left: 100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+.btn-new-post:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(230, 81, 0, 0.4);
+    background: white;
+    /* Different background on hover */
+    color: #FF5722;
+    /* Different text color on hover */
+    border-color: #FF5722;
+    /* Add border on hover */
+}
+
+/* Grid Layout for Blog List */
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+li {
+    background-color: #FFFFFF;
+    border: none;
+    /* Remove border for cleaner look */
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    /* Soft shadow */
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+li:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(255, 152, 0, 0.2);
+}
+
+h1,
+h2,
+h3 {
+    color: #E65100;
+}
+
+/* General Button Styles */
+button,
+input[type="submit"],
+.action-btn {
+    background: linear-gradient(to bottom, #FFB74D, #FF9800);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(230, 81, 0, 0.2);
+    transition: all 0.2s ease;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+button:hover,
+input[type="submit"]:hover,
+.action-btn:hover {
+    background: linear-gradient(to bottom, #FFCC80, #FFA726);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(230, 81, 0, 0.3);
+}
+
+button:active,
+input[type="submit"]:active,
+.action-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(230, 81, 0, 0.2);
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 2px solid #FFE0B2;
+    border-radius: 12px;
+    box-sizing: border-box;
+    font-family: inherit;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1rem;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border-color: #FF9800;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(255, 152, 0, 0.1);
+}
+
+.flash {
+    padding: 15px;
+    margin: 15px 0;
+    background-color: #FFF3E0;
+    border-left: 5px solid #FF9800;
+    color: #E65100;
+    border-radius: 5px;
+    font-weight: bold;
+}
