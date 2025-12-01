@@ -15,8 +15,8 @@ header {
     padding: 40px 0;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
-    margin-bottom: 40px;
-    position: relative;
+    /* margin-bottom: 40px; */
+    position: center;
     overflow: hidden;
 }
 
